@@ -89,34 +89,37 @@ class LinkedLists {
         return this.head
     }
 
+    contains(data){
+        let current = this.head;
+        while(current != null){
+            if(current.value == data){
+                return true;
+                current = current.next;
+            }
+            return false;
+        }
+    }
+
     removeAt(index){
-        //If linklist is empty
         if(this.head == null){
             return;
         }
 
-        //store head node
         let temp = this.head;
 
-        //If head needs to be removed
         if(index == 0){
-            //change head
             this.head = temp.next;
             return;
         }
 
-        //Find previous node of the node to be deleted
         for (let i = 0; temp != null && i < index - 1; i++){
             temp = temp.next
         }
 
-        //If index is more than number of nodes
         if(temp == null || temp.next == null){
             return;
         }
 
-        //Node temp => next is the node to be deleted
-        //Store pointer to the next node of node to be deleted
         let next = temp.next.next;
         temp.next = next;
     }
@@ -161,3 +164,5 @@ list.insertAt(2, 5);
 console.log(list.at(2));
 list.pop();
 console.log(list.tail());
+console.log(list.contains(15));
+console.log(list.contains(12));
