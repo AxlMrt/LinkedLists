@@ -2,6 +2,16 @@ class LinkedLists {
     constructor(head = null){
         this.head = head;
     }
+
+    size(){
+        let count = 0;
+        let node = this.head;
+        while (node){
+            count += 1;
+            node = node.next;
+        }
+        return count;
+    }
 } 
 
 class Node {
@@ -18,4 +28,4 @@ node1.next = node2;
 node2.next = node3;
 
 let list = new LinkedLists(node1);
-console.log(list.head.next)
+console.log(list.size())
