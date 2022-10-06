@@ -12,6 +12,20 @@ class LinkedLists {
         }
         return count;
     }
+
+    head(){
+        return this.head
+    }
+
+    tail(){
+        let lastNode = this.head;
+        if(lastNode){
+            while(lastNode.next){
+                lastNode = lastNode.next;
+            }
+        }
+        return lastNode
+    }
 } 
 
 class Node {
@@ -28,4 +42,4 @@ node1.next = node2;
 node2.next = node3;
 
 let list = new LinkedLists(node1);
-console.log(list.size())
+console.log(list.tail())
