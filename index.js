@@ -59,12 +59,12 @@ class LinkedLists {
     }
 
     at(index){
-        let currentNode = this.head
+        let currentNode = this.head;
 
         let count = 0;
         while(currentNode !== null){
             if(count == index){
-                return currentNode.value
+                return currentNode.value;
             }
             count++;
             currentNode = currentNode.next;
@@ -112,7 +112,7 @@ class LinkedLists {
             count++;
             current = current.next;
         }
-        return -1
+        return -1;
     }
 
     removeAt(index){
@@ -147,7 +147,7 @@ class LinkedLists {
         let i = 1;
         while(current){
             if (i === index){
-                const node = new Node(value)
+                const node = new Node(value);
                 node.next = current.next;
                 current.next = node;
                 return this.head
