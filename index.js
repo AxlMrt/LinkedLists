@@ -121,19 +121,23 @@ class LinkedLists {
         temp.next = next;
     }
 
-    /* insertAt(value, index){
-        //check if given node is null
-        if(index == null){
-            return 'The given previous node cannot be null';
+    insertAt(index, value){
+        if (!this.head || index === 0){
+            return this.head = new Node(value);
         }
-
-        let newNode = new Node(value);
-
-        // Allocate the node and put it in data
-        newNode.next = index.next;
-
-        index.next = newNode;
-    } */
+        let current = this.head;
+        let i = 1;
+        while(current){
+            if (i === index){
+                const node = new Node(value)
+                node.next = current.next;
+                current.next = node;
+                return this.head
+            }
+            current = current.next;
+            i++;
+        }
+    } 
 } 
 
 node1 = new Node(2);
@@ -150,6 +154,10 @@ list.prepend(12);
 console.log(list.size());
 console.log(list.nodeHead());
 console.log(list.tail());
-console.log(list.at(2))
-list.pop()
-console.log(list.tail())
+console.log(list.at(2));
+list.removeAt(2);
+console.log(list.at(2));
+list.insertAt(2, 5);
+console.log(list.at(2));
+list.pop();
+console.log(list.tail());
