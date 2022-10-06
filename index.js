@@ -27,6 +27,13 @@ class LinkedLists {
         return last.next = newNode;
     }
 
+    prepend(value){
+        const newNode = new Node(value);
+
+        newNode.next = this.head;
+        this.head = newNode;
+    }
+
     size(){
         let count = 0;
         let node = this.head;
@@ -37,8 +44,8 @@ class LinkedLists {
         return count;
     }
 
-    head(){
-        return this.head
+    nodeHead(){     
+        return this.head;
     }
 
     tail(){
@@ -61,5 +68,7 @@ node2.next = node3;
 let list = new LinkedLists(node1);
 
 list.append(7);
+list.prepend(12);
 console.log(list.size());
+console.log(list.nodeHead());
 console.log(list.tail());
