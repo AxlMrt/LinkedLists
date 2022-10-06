@@ -100,6 +100,21 @@ class LinkedLists {
         }
     }
 
+    find(value){
+        let current = this.head;
+        let count = 0;
+
+        while(current){
+            if(count == value){
+                return current;
+            }
+
+            count++;
+            current = current.next;
+        }
+        return -1
+    }
+
     removeAt(index){
         if(this.head == null){
             return;
@@ -166,3 +181,4 @@ list.pop();
 console.log(list.tail());
 console.log(list.contains(15));
 console.log(list.contains(12));
+console.log(list.find(2));
