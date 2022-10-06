@@ -71,6 +71,24 @@ class LinkedLists {
         }
     }
 
+    pop(){
+        if(this.head == null){
+            return null;
+        }
+
+        if(this.head.next == null){
+            return null;
+        }
+
+        let secondLast = this.head;
+        while(secondLast.next.next != null){
+            secondLast = secondLast.next;
+        }
+
+        secondLast.next = null;
+        return this.head
+    }
+
     removeAt(index){
         //If linklist is empty
         if(this.head == null){
@@ -132,7 +150,6 @@ list.prepend(12);
 console.log(list.size());
 console.log(list.nodeHead());
 console.log(list.tail());
-
-console.log(list.nodeHead());
-console.log(list.tail());
 console.log(list.at(2))
+list.pop()
+console.log(list.tail())
